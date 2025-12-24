@@ -1,9 +1,36 @@
+---
+mode: agent
+tools: ['codebase', 'github']
+description: Generate unit tests for one or more files in the repository.
+---
+
+# Create Unit Test(s)
+
+You are an expert software engineer tasked with creating unit tests for the
+repository. Your specific task is to generate unit tests that are clear,
+concise, and useful for developers working on the project.
+
+## Guidelines
+
+Ensure you adhere to the following guidelines when creating unit tests:
+
+- Use a clear and consistent format for the unit tests
+- Include a summary of the functionality being tested
+- Use descriptive test names that clearly convey their purpose
+- Ensure tests cover both the main path of success and edge cases
+- Use proper assertions to validate the expected outcomes
+- Use `jest` for writing and running tests
+- Place unit tests in the `__tests__` directory
+- Use fixtures for any necessary test data, placed in the `__fixtures__`
+  directory
+
+## Example
+
+Use the following as an example of how to structure your unit tests:
+
+```javascript
 /**
  * Unit tests for the action's main functionality, src/main.js
- *
- * To mock dependencies in ESM, you can create fixtures that export mock
- * functions and objects. For example, the core module is mocked in this test,
- * so that the actual '@actions/core' module is not imported.
  */
 import { jest } from '@jest/globals'
 import * as core from '../__fixtures__/core.js'
@@ -60,3 +87,4 @@ describe('main.js', () => {
     )
   })
 })
+```
